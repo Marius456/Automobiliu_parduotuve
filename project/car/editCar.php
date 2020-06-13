@@ -23,18 +23,27 @@ if ($session->logged_in) {
                             <?php
                          	$dbc=mysqli_connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME)
                                 or die(mysql_error() . '<br><h1>Faile include/constants.php suveskite savo MySQLDB duomenis.</h1>');
-                             if($_POST !=null){
-                                $model = $_POST['model'];
-                                $autoname =$_POST['name'];
-                                $date = $_POST['date'];
-                                $city = $_POST['city'];
-                                $price = $_POST['price'];
-								$usernam = $session->userinfo['username'];
-								 
-                                $sql = "INSERT INTO cars (model, name, date, city, price, username) VALUES ('$model', '$autoname','$date','$city','$price','$usernam')";
-								 
-                               if (mysqli_query($dbc, $sql)) echo "Įrašyta";
-								 else echo $sql;
+                            
+                            if($_POST !=null){
+                                $id = $_GET['id'];
+                                $sql = "SELECT * FROM cars WHERE id='$id'";
+                                $result = mysqli_query($dbc, $sql);
+                                $row = mysqli_fetch_assoc($result);
+                                $model = $row['model']; $autoname = $row['name']; $date = $row['date']; $city = $row['city']; $price = $row['price'];
+                                if($_POST['model'] !=null)
+                                    $model = $_POST['model'];
+                                if($_POST['name'] !=null)
+                                    $autoname =$_POST['name'];
+                                if($_POST['date'] !=null)
+                                    $date = $_POST['date'];
+                                if($_POST['city'] !=null)
+                                    $city = $_POST['city'];
+                                if($_POST['price'] !=null)
+                                    $price = $_POST['price'];
+
+                                $sql = "UPDATE cars SET model='$model', name='$autoname', date='$date', city='$city', price='$price' WHERE id='$id'";
+                                if (mysqli_query($dbc, $sql)) echo "Įrašyta";
+                                    else echo $sql;
                                 }
                             ?>
                         <br> 

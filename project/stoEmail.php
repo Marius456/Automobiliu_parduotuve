@@ -14,9 +14,6 @@ $mail->From = $webmaster_email;
 $mail->Port = 465;
 $mail->FromName = "Tomas";
 $mail->AddAddress($email,$name);
-//$mail->AddReplyTo($webmaster_email,"Tomas");
-//$mail->WordWrap = 50;                         // set word wrap
-//$mail->IsHTML(true);                          // send as HTML
 $mail->Subject = "subject";
 $mail->Body = "Hi,
 This is the HTML BODY ";                      //HTML Body 

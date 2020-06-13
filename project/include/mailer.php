@@ -1,6 +1,12 @@
 <?php
-//require '/usr/share/php/libphp-phpmailer/class.phpmailer.php';
-//require '/usr/share/php/libphp-phpmailer/class.smtp.php';
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require '/usr/share/php/libphp-phpmailer/src/Exception.php';
+require '/usr/share/php/libphp-phpmailer/src/PHPMailer.php';
+require '/usr/share/php/libphp-phpmailer/src/SMTP.php';
+
 class Mailer {
 
     /**

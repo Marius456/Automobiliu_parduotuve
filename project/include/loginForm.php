@@ -23,8 +23,8 @@ if (isset($form) && isset($session) && !$session->logged_in) {
         </p>
         <input type="hidden" name="sublogin" value="1"/>
         <p>
-            <a href="forgotpass.php">Negalite prisijungti?</a>&nbsp;&nbsp;            
-            <a href="register.php">Registracija</a>
+            <a href="./user/forgotpass.php">Negalite prisijungti?</a>&nbsp;&nbsp;            
+            <a href="./user/register.php">Registracija</a>
         </p>     
     </form>
     <?php

@@ -85,7 +85,7 @@ if ($session->logged_in) {
 				{while($row = mysqli_fetch_assoc($result))
 					{
 					echo "<tr><td>".$row['model']."</td><td>".$row['name']."</td><td>".$row['date']."</td><td>".$row['city']."</td><td>".$row['price']."</td>".
-					"<td><a href=\"../car/editCar.php\">Redaguoti</a> | <a href='../process.php?dc=1&id=".$row['id']."' onclick='return confirm(\"Ar tikrai norite trinti?\");'>Trinti</a></td></tr>";
+					"<td><a href=\"../car/editCar.php?id=".$row['id']."\">Redaguoti</a> | <a href='../process.php?dc=1&id=".$row['id']."' onclick='return confirm(\"Ar tikrai norite trinti?\");'>Trinti</a></td></tr>";
 					} 
 				};
 			   echo "</table>";
