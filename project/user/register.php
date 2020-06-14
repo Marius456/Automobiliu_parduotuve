@@ -1,21 +1,21 @@
 <?php
-include("include/session.php");
+include("../include/session.php");
 if ($session->logged_in) {
-    header("Location: index.php");
+    header("Location: ../index.php");
 } else {
     ?>
     <html>
         <head>  
             <meta http-equiv="X-UA-Compatible" content="IE=9; text/html; charset=utf-8"/> 
             <title>Registracija</title>
-            <link href="include/styles.css" rel="stylesheet" type="text/css" />
+            <link href="../include/styles.css" rel="stylesheet" type="text/css" />
         </head>
         <body>   
             <table width="100%"><tr><td>
              <center><h1>Automobilių pardavimas.</h1> </center>
                     </td></tr><tr><td> 
                         <table style="border-width: 2px; border-style: dotted;"><tr><td>
-                                    Atgal į [<a href="index.php">Pradžia</a>]
+                                    Atgal į [<a href="../index.php">Pradžia</a>]
                                 </td></tr></table>               
                         <?php
                         /**
@@ -25,7 +25,7 @@ if ($session->logged_in) {
                             /* Registracija sėkminga */
                             if ($_SESSION['regsuccess']) {
                                 echo "<p>Ačiū, <b>" . $_SESSION['reguname'] . "</b>, Jūsų duomenys buvo sėkmingai įvesti į duomenų bazę, galite "
-                                . "<a href=\"index.php\">prisijungti</a>.</p><br>";
+                                . "<a href=\"../index.php\">prisijungti</a>.</p><br>";
                             }
                             /* Registracija nesėkminga */ else {
                                 echo "<p>Atsiprašome, bet vartotojo <b>" . $_SESSION['reguname'] . "</b>, "
@@ -49,7 +49,7 @@ if ($session->logged_in) {
                                 ?>                            
                                 <table>
                                     <tr><td>
-                                            <form action="process.php" method="POST" class="login">              
+                                            <form action="../process.php" method="POST" class="login">              
                                                 <center style="font-size:18pt;"><b>Registracija</b></label></center>
                                                 <p style="text-align:left;">Vartotojo vardas:
                                                     <input class ="s1" name="user" type="text" size="15"
@@ -73,7 +73,7 @@ if ($session->logged_in) {
                             <?php
                         }
                         echo "<tr><td>";
-                        include("include/footer.php");
+                        include("../include/footer.php");
                         echo "</td></tr>";
                         ?>
                     </td></tr>

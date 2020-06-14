@@ -4,9 +4,9 @@ include("../include/session.php");
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require '/usr/share/php/libphp-phpmailer/src/Exception.php';
-require '/usr/share/php/libphp-phpmailer/src/PHPMailer.php';
-require '/usr/share/php/libphp-phpmailer/src/SMTP.php';
+require_once '/usr/share/php/libphp-phpmailer/src/Exception.php';
+require_once '/usr/share/php/libphp-phpmailer/src/PHPMailer.php';
+require_once '/usr/share/php/libphp-phpmailer/src/SMTP.php';
   
 if ($session->logged_in) {
     ?>    
@@ -38,7 +38,7 @@ if ($session->logged_in) {
                                 $price = $_POST['price'];
 								$usernam = $session->userinfo['username'];
 								 
-							/*	 
+								 
 								$target_dir = "uploads/";
 								$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 								$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
@@ -54,7 +54,7 @@ if ($session->logged_in) {
 										$uploadOk = 0;
 									}
 								}
-							*/	 
+								 
 								 
                                 $sql = "INSERT INTO cars (model, name, date, city, price, username) VALUES ('$model', '$autoname','$date','$city','$price','$usernam')";
 								 
@@ -160,7 +160,7 @@ if ($session->logged_in) {
 													. "Miestas: " . $city . "\n"
 													. "Kaina: " . $price . "\n\n";               
 										$mail->Send();
-										echo "siusta";
+										//echo "siusta";
 									}
 									} 
 								};
